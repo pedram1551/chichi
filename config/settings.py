@@ -7,7 +7,9 @@ SECRET_KEY = 'django-insecure-change-this'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'chichi-rhsu.onrender.com',
+    '127.0.0.1',
+    'localhost']
 
 
 # Applications
