@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ثبت آگهی - چی‌چی</title>
+</head>
+<body>
+
+    <h1>ثبت آگهی جدید</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <p>
+            <label>نام آگهی:</label><br>
+            <input type="text" name="name" required>
+        </p>
+
+        <p>
+            <label>قیمت:</label><br>
+            <input type="number" name="price" required>
+        </p>
+
+        <p>
+            <label>توضیحات:</label><br>
+            <textarea name="description"></textarea>
+        </p>
+
+        <p>
+            <label>تعداد:</label><br>
+            <input type="number" name="stock" value="1">
+        </p>
+
+        <p>
+            <label>فروشگاه:</label><br>
+            <select name="store">
+                {% for store in stores %}
+                    <option value="{{ store.id }}">
+                        {{ store.name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </p>
+
+        <button type="submit">
+            ثبت آگهی
+        </button>
+
+    </form>
+
+</body>
+</html>
